@@ -1,0 +1,28 @@
+<article>
+    <a href='/dashboard' class='justify-content-end'>&larr; back to dashboard</a>
+    <h2 class='title mt-5'> edit post</h2>
+    <hr>
+    <form class=' edit-blog-form'>
+        <div>
+            <label for='blog-title'>blog title:</label>
+            <input class='input' name='blog-title' type='text' value='{{blog.title}}' />
+        </div>
+        <div>
+            <label for='blog-content'>blog content:</label>
+            <textarea class='textarea' name='blog-content' type='text'>{{blog.content}}</textarea>
+        </div>
+        <div class='justify-content-end'>
+            created by you on {{format_date.blog}}
+            |
+            <a href='/blogs/{{blog.id}}'>{{blog.comments.length}} {{format_plural 'comment' blog.comments.length}}</a>
+        </div>
+        <button type='submit' class='btn btn-success'>save blog</button>
+        <button type='button' class='btn btn-danger delete-blog-btn'>delete blog</button>
+    </form>
+</article>
+
+
+{{>comments blog.comments}}
+
+<script src='/js/edit-blog.js'></script>
+<script src='/js/delete-blog.js'></script>

@@ -1,0 +1,16 @@
+<div class='mb-5 pt-3'>
+    <a href='/dashboard/create/'><button class='btn btn-primary justify-content-end' id='create-blog'> Create a
+            Blog</button></a>
+    <h2 class='title pb-4'> Dashboard: Your Blogs</h2>
+    {{#if blogs.length}}
+</div>
+
+{{#each blogs as | blog|}}
+{{>blog-info blog}}
+<a href='/dashboard/edit/{{blog.id}}'><button class='btn btn-warning mb-5 ml-5'>Edit Blog</button></a>
+{{/each}}
+
+{{else}}
+<h6 class ='text center font-italic pb-4'> You do not currently have any blogs! </h6>
+
+{{/if}}

@@ -1,0 +1,17 @@
+<!-- iterates over the list of blogs-->
+{{#each blogs as |blog| }}
+
+{{>blog-info blog}}
+
+</div>
+
+{{else}}
+{{!-- else section which will display only when the list is empty. --}}
+<h6 class='pb-5 text center font-italic'>There are currently no blogs</h6>
+
+{{/each}}
+
+
+
+
+
